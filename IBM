@@ -1,0 +1,10 @@
+total_sell = contents.select { |item| item["type"] == "sell" }
+                     .map { |item| item["amount"].to_f }
+                     .reduce(:+)
+#=> 708877.0513117099
+
+
+total_buy = contents.select { |item| item["type"] == "buy" }
+                    .map { |item| item["amount"].to_f }
+                    .reduce(:+)
+#=> 321607.8393008502
